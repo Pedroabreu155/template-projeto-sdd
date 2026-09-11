@@ -1,6 +1,6 @@
 ---
 name: proxima-tarefa
-description: "Use quando o usuário perguntar qual a próxima tarefa prioritária, o que fazer agora, prioridades do dia/semana, ou ao iniciar sessão de planejamento. Consulta o kanban do projeto no Notion e aplica regra de prioridade (P0, dependências, bloqueios, teto de 3 em andamento). Triggers: proxima tarefa, próxima tarefa, o que fazer, prioridade, prioridades, kanban, backlog. PREENCHER: data_source com a URL collection:// do seu kanban."
+description: "Use quando o usuário perguntar qual a próxima tarefa prioritária, o que fazer agora, prioridades do dia/semana, ou ao iniciar sessão de planejamento. Consulta o kanban do projeto no Notion e aplica regra de prioridade (P0, dependências, bloqueios, teto de 3 em andamento). Triggers: proxima tarefa, próxima tarefa, o que fazer, prioridade, prioridades, kanban, backlog, criar task, adicionar task. PREENCHER: data_source com a URL collection:// do seu kanban."
 metadata:
   version: "1.0.0"
 ---
@@ -56,6 +56,23 @@ ela muda; a única garantia é excluir `Feito` e separar `Bloqueado`.
    a recomendação é terminar um antes de puxar outro.
 7. **Espelhos de execução:** cards que espelham um tracker do repo (ex: `TASKS.md`)
    — a execução e os commits seguem pelo repo; o card só reflete o status.
+
+## Modo registrar (criar task)
+
+Quando o usuário pedir para adicionar, criar ou registrar uma task no kanban
+("adiciona X ao kanban", "cria a task de ...", "registra isso no backlog"):
+
+1. **Extrair** do pedido: título (Tarefa), descrição (Notas/conteúdo) e o que mais vier.
+2. **Nunca inventar `Projeto` nem `Prioridade`.** Se faltar, perguntar (uma rodada só).
+   `Status` segue a regra do quadro: P0 → "A fazer", demais → "Backlog" (salvo
+   convenção do repo em contrário; `Feito` só com ordem explícita).
+3. **Defaults seguros:** `Responsável` = Eu (salvo indicação); `Esforço` omitir se
+   desconhecido; `Depende de` só se o usuário citar bloqueio ("depois de…", "trava por…").
+4. **Confirmar o schema antes:** fetch no data source e usar os nomes exatos das
+   propriedades (eles variam por projeto).
+5. **Criar** via `create-pages` no data source, com conteúdo curto e checklist se
+   houver subtarefas.
+6. **Confirmar** com título + link da página criada + coluna onde o card caiu.
 
 ## Formato da resposta
 
