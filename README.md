@@ -29,3 +29,6 @@ e apague o que não usar.
   promovida para `AGENTS.md`/`CLAUDE.md`/mapping.
 - `docs/WORKFLOW-SPECS.md` — o método (mapping → product-spec → tech-spec).
 - `.specs/features/` — onde nascem `spec.md`, `design.md`, `tasks.md` por feature.
+- `.agents/skills/proxima-tarefa/` — skill que lê seu kanban e responde "qual a
+  próxima tarefa?". **Preencha `[DATA-SOURCE-URL]` e `[PROJETO-PADRÃO]` no SKILL.md.**
+  O opencode descobre skills do repo automaticamente.
