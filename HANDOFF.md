@@ -17,8 +17,9 @@ Lê-se **uma vez por sessão** — não carrega por prompt como o `AGENTS.md`.
 
 | Arquivo | O que responde |
 |---|---|
-| `AGENTS.md` | Como trabalhar (gate, restrições) |
+| `AGENTS.md` | Como trabalhar (gate, restrições, onde fica o vault) |
 | `TASKS.md` | O que falta — **fonte única de tarefas** |
+| `[docs do vault]` | Por que o produto existe e como priorizar — se houver vault; senão, pergunte |
 | `HANDOFF.md` (este) | Estado verificado, evidências, armadilhas |
 
 ---
